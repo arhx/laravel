@@ -87,6 +87,7 @@ if (token) {
                 });
             })
             .prependTo('#flash-container');
+
         setTimeout(function () {
             $(flash).animate({opacity: 0}, 'slow', function () {
                 $(flash).remove();

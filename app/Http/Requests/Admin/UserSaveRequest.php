@@ -14,10 +14,17 @@ class UserSaveRequest extends FormRequest
      */
     public function rules()
     {
+    	if($this->id > 0){
+		    $passwordRules = ['nullable','string', 'min:8'];
+		    $emailRules = ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$this->id];
+	    }else{
+		    $passwordRules = ['required','string', 'min:8'];
+		    $emailRules = ['required', 'string', 'email', 'max:255', 'unique:users'];
+	    }
         return [
 	        'name' => ['required', 'string', 'max:255'],
-	        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-	        'password' => ['string', 'min:8'],
+	        'email' => $emailRules,
+	        'password' => $passwordRules,
 	        'role_id' => ['required', 'numeric', 'exists:roles,id']
         ];
     }
