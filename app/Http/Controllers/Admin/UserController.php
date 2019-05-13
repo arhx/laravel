@@ -53,6 +53,6 @@ class UserController extends Controller
 
 		flash('User saved');
 
-		return redirect()->route('admin-users');
+		return back();
     }
 }
