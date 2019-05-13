@@ -1,3 +1,9 @@
+## Install
+```bash
+composer create-project --prefer-dist arhx/laravel
+```
+
+
 ## About this assemble of Laravel
 
 - [Laravel 5.8 core](https://laravel.com/docs/5.8)
@@ -11,7 +17,8 @@
 - Basic Russian translation
 - Modified configurations: language, timezone, database encoding, logs permissions
 
-#Todo
+
+# Todo
 - Verification email translation
 - Modules translation
 - Ukrainian translation
