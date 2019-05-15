@@ -1,6 +1,6 @@
 ## Install
 ```bash
-composer create-project --prefer-dist arhx/laravel
+composer create-project --prefer-dist arhx/laravel project_folder
 ```
 
 
