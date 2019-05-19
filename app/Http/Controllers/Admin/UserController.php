@@ -47,8 +47,11 @@ class UserController extends Controller
 		}else{
 			$user = new User();
 		}
-		$user->fill($request->all());
+		$user->fill($request->except('password'));
 		$user->role_id = $request->role_id;
+		if($request->password){
+			$user->password = \Hash::make($request->password);
+		}
 		$user->save();
 
 		flash('User saved');
