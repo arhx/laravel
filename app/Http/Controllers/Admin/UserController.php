@@ -44,14 +44,15 @@ class UserController extends Controller
     public function save(UserSaveRequest $request){
 		if($request->id){
 			$user = User::findOrFail($request->id);
+			if($request->password){
+				$user->password = \Hash::make($request->password);
+			}
 		}else{
 			$user = new User();
+			$user->password = \Hash::make($request->password);
 		}
 		$user->fill($request->except('password'));
 		$user->role_id = $request->role_id;
-		if($request->password){
-			$user->password = \Hash::make($request->password);
-		}
 		$user->save();
 
 		flash('User saved');
