@@ -10,7 +10,7 @@ function money($value, $char = '.'){
 function settings($key,$default = null){
 	static $data;
 	if(is_null($data)){
-		$data = \App\Models\Setting::all()->pluck('key','value')->toArray();
+		$data = \App\Models\Setting::all()->pluck('value','key')->toArray();
 	}
 	return Arr::get($data,$key,$default);
 }
