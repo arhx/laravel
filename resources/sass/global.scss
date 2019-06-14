@@ -26,3 +26,8 @@
     }
   }
 }
+
+.form-control[type="file"] {
+  /* display file fix */
+  padding-top: 0.175rem;
+}
