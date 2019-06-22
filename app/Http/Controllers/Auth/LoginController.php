@@ -41,8 +41,8 @@ class LoginController extends Controller
     }
 
     public function authenticated(Request $request, User $user){
-    	if(!$user->hasRole(Role::ID_USER)){
-    		$this->redirectTo = '/admin';
+	    if(!$user->hasRole('user',true)){
+		    return redirect()->route('admin-index');
 	    }
     }
 }
