@@ -55,14 +55,35 @@ if (token) {
 // });
 
 (function($){
+    function showAjaxModal(html){
+        $('.modal-backdrop').remove();
+        $('#ajax-modal-container').html(html);
+        $('#ajax-modal-container > .modal').modal('show');
+    }
     $(document).ready(function(){
         let $document = $(document);
-        $document.on('click', '.ajax-modal', function (e) {
+        $document.on('submit', '.ajax-modal-form', function (e) {
+            e.preventDefault();
+            let action = $(this).attr('action') || location.href;
+            let method = $(this).attr('method').toLowerCase() || 'get';
+            let formData = $(this).serializeArray();
+            let data = {};
+            formData.map((item) => {
+                data[item.name] = item.value;
+            });
+
+            axios({
+                method: method,
+                url: action,
+                data: data
+            }).then((response) => {
+                showAjaxModal(response.data);
+            });
+        });
+        $document.on('click', '.ajax-modal, .ajax-modal-links a', function (e) {
             e.preventDefault();
             axios.get($(this).attr('href')).then((response) => {
-                $('.modal-backdrop').remove();
-                $('#ajax-modal-container').html(response.data);
-                $('#ajax-modal-container > .modal').modal('show');
+                showAjaxModal(response.data);
             });
         });
         $document.on('click','[data-confirm]',function(e){
