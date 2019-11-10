@@ -66,16 +66,12 @@ if (token) {
             e.preventDefault();
             let action = $(this).attr('action') || location.href;
             let method = $(this).attr('method').toLowerCase() || 'get';
-            let formData = $(this).serializeArray();
-            let data = {};
-            formData.map((item) => {
-                data[item.name] = item.value;
-            });
+            let formData = new FormData(this);
 
             axios({
                 method: method,
                 url: action,
-                data: data
+                data: formData
             }).then((response) => {
                 showAjaxModal(response.data);
             });
