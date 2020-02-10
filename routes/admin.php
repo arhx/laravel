@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/','UserController@index');
+Route::get('/','UserController@index')->name('index');
 Route::get('users','UserController@users')->name('users');
 Route::get('user/create','UserController@create')->name('user-create');
 Route::get('user/{id}/edit','UserController@edit')->name('user-edit');
