@@ -6,7 +6,7 @@ composer create-project --prefer-dist arhx/laravel project_folder
 
 ## About this assemble of Laravel
 
-- [Laravel 5.8 core](https://laravel.com/docs/5.8)
+- [Laravel 8 core](https://laravel.com/docs/8.x)
 - Admin Panel - Users, Settings
 - Profile page - Changing name and password
 - Simple Roles - @role('admin'), $user->hasRole('admin')
@@ -21,8 +21,4 @@ composer create-project --prefer-dist arhx/laravel project_folder
 # Todo
 - Verification email translation
 - Modules translation
-- Ukrainian translation
 - Admin Logs module
-
-
-

@@ -10,6 +10,8 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.version();
+mix.disableNotifications();
 
 mix.js('resources/js/public.js', 'public/js')
     .js('resources/js/admin.js', 'public/js')

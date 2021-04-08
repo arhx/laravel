@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
+
 use App\Models\Setting;
+use Illuminate\Database\Seeder;
+
 class SettingsTableSeeder extends Seeder
 {
     /**
@@ -12,10 +15,10 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         foreach(range(1,5) as $i){
-        	Setting::create([
-        		'key' => "key-$i",
-		        'value' => "value-$i"
-	        ]);
+            Setting::create([
+                'key' => "key-$i",
+                'value' => "value-$i"
+            ]);
         }
     }
 }

@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,14 +15,15 @@
 */
 
 Auth::routes();
-Route::get('/logout','Auth\LoginController@logout')->name('logout');
+Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
 
-Route::get('/', 'PublicController@index')->name('index');
+Route::get('/', [App\Http\Controllers\PublicController::class,'index'])->name('index');
 
 Route::prefix('profile')->group(function(){
-	Route::get('/', 'ProfileController@index')->name('profile');
-	Route::post('/save', 'ProfileController@save')->name('profile-save');
+    Route::get('/', [App\Http\Controllers\ProfileController::class,'index'])->name('profile');
+    Route::post('/save', [App\Http\Controllers\ProfileController::class,'save'])->name('profile-save');
 });
 
 //examples
 Route::view('/example/modal','example.modal');
+
