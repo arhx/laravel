@@ -6,7 +6,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="{{ mix('/css/public.css') }}">
+    @vite(['resources/sass/public.scss','resources/js/public.js'])
 
     <title>{{ config('app.name') }}</title>
 
@@ -19,7 +19,6 @@
 </div>
 
 <div id="ajax-modal-container"></div>
-<script src="{{ mix('/js/public.js') }}"></script>
 @stack('scripts')
 
 @include('includes.flash')

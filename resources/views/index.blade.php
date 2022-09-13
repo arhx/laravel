@@ -8,7 +8,7 @@
 @endsection
 
 @push('scripts')
-    <script>
+    <script type="module">
         $('.flash-test').on('click',function(){
             flash('test');
         });

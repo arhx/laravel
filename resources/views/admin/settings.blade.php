@@ -20,7 +20,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="text-center form-group">
+        <div class="text-center form-group mb-3">
             <button class="btn btn-primary px-sm-5">@lang('Save')</button>
         </div>
     </form>

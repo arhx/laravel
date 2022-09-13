@@ -7,7 +7,7 @@
             <li class="breadcrumb-item active" aria-current="page">@lang('Users')</li>
         </ol>
     </nav>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <a href="{{ route('admin-user-create') }}" class="btn btn-success ajax-modal">
             <i class="fa fa-plus"></i>
             @lang('Create new user')

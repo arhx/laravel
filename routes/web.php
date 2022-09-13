@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +13,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Auth::routes();
-Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
-
 Route::get('/', [App\Http\Controllers\PublicController::class,'index'])->name('index');
 
 Route::prefix('profile')->group(function(){
@@ -27,3 +23,4 @@ Route::prefix('profile')->group(function(){
 //examples
 Route::view('/example/modal','example.modal');
 
+require __DIR__.'/auth.php';
