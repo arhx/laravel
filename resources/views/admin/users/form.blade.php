@@ -9,9 +9,7 @@
                         @lang('Creating user')
                     @endif
                 </h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('admin-user-save') }}" method="post">
                 @csrf
@@ -45,14 +43,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                        <div class="col-md-6 mb-2">
-                            <button type="button" class="btn btn-warning btn-block" data-bs-dismiss="modal">@lang('Cancel')</button>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <button type="submit" class="btn btn-primary btn-block">@lang('Save')</button>
-                        </div>
-
-
+                    <button type="button" class="btn btn-warning btn-block" data-bs-dismiss="modal">@lang('Cancel')</button>
+                    <button type="submit" class="btn btn-primary btn-block">@lang('Save')</button>
                 </div>
             </form>
         </div>
